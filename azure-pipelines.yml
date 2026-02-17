@@ -21,7 +21,7 @@ stages:
   - job: plan
     displayName: "Terraform fmt/validate/plan"
     steps:
-    - task: TerraformInstaller@1
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@1
       displayName: "Install Terraform"
       inputs:
         terraformVersion: "$(TERRAFORM_VERSION)"
@@ -60,7 +60,7 @@ stages:
           - download: current
             artifact: vpc-code
 
-          - task: TerraformInstaller@1
+          - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@1
             displayName: "Install Terraform"
             inputs:
               terraformVersion: "$(TERRAFORM_VERSION)"
